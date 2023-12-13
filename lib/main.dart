@@ -109,12 +109,12 @@ class _MyHomePageState extends State<MyHomePage> {
               name: 'Y-Axis',
               opposedPosition: true,
               interval: 2000000000,
-              visibleMaximum: 10000000000,
+              initialVisibleMaximum: 10000000000,
               numberFormat: NumberFormat.compact())
         ],
         primaryXAxis: DateTimeAxis(),
-        primaryYAxis: NumericAxis(visibleMinimum: 50, visibleMaximum: 100),
-        series: <ChartSeries<ChartSampleData, DateTime>>[
+        primaryYAxis: NumericAxis(initialVisibleMinimum: 50, initialVisibleMaximum: 100),
+        series: <CartesianSeries<ChartSampleData, DateTime>>[
           CandleSeries<ChartSampleData, DateTime>(
               dataSource: chartData,
               xValueMapper: (ChartSampleData data, _) => data.x,
